@@ -1,7 +1,13 @@
 name: Hello world
 agent:
     type: Unity::VM
-    image: slough-ops/ubuntu-18.04-base:stable
+    image: package-ci/win10:stable
     flavor: b1.small
 commands:
+    - pushd %~dp0
     - echo "Hello world!"
+    - mkdir webrtcBuild
+    - cd webrtBuild
+    - git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+    - set "PATH=%~dp0/webrtBuild/depot_tools;%PATH%"
+    - gclient
