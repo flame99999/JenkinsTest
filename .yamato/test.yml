@@ -5,9 +5,14 @@ agent:
     flavor: b1.small
 commands:
     - pushd %~dp0
-    - echo "Hello world!"
     - mkdir webrtcBuild
-    - cd webrtBuild
+    - cd webrtcBuild
     - git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
     - set "PATH=%~dp0/webrtBuild/depot_tools;%PATH%"
     - gclient
+    - cd ../
+    - fetch --nohooks webrtc
+    - gclient sync
+    - git checkout branch-heads/72
+    - gn gen out/TestBuild
+    - ninja -C out/TestBuild
