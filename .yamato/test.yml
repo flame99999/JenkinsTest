@@ -1,7 +1,7 @@
 name: Hello world
 agent:
     type: Unity::VM
-    image: package-ci/win10:stable
+    image: sdet/gamecode_win10:stable
     flavor: b1.small
 commands:
     - test.cmd
