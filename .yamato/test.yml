@@ -2,6 +2,6 @@ name: Hello world
 agent:
     type: Unity::VM
     image: renderstreaming/win10:latest
-    flavor: b1.medium
+    flavor: b1.xlarge
 commands:
     - test.cmd
