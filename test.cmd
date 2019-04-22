@@ -17,6 +17,6 @@ cd src
 call git checkout branch-heads/72
 call gclient sync -f
 @echo on
-call gn gen out/TestBuild --args="is_debug=true is_clang=false symbol_level=2 target_cpu=\"x64\" use_custom_libcxx=false enable_iterator_debugging=true"
+call gn gen out/TestBuild --args="is_debug=false is_clang=false symbol_level=2 target_cpu=\"x64\" use_custom_libcxx=false enable_iterator_debugging=true"
 call ninja -C out/TestBuild
 pause
