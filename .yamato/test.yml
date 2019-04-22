@@ -5,3 +5,7 @@ agent:
     flavor: b1.xlarge
 commands:
     - test.cmd
+artifacts:
+    build:
+      paths:
+        - "out/TestBuild/*" 
